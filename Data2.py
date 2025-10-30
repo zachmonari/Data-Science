@@ -5,5 +5,26 @@ students = pd.DataFrame({
     "Attendance": [0.95, 0.80, 0.88, 0.99, 0.85,0.82,0.75,0.92,0.87,0.83,0.86]
 })
 
-#print(students.describe())
+print(students.describe())
+print(students)
+print(students.shape)
+print(students.info)
+
+# Select a column
+print(students["Attendance"])
+
+# Filter rows
+high_scores = students["Score"] > 70
+print(high_scores)
+
+# Sort by score
+sorted_scores=students.sort_values(by="Score",ascending=False)
+print(sorted_scores)
+
+# Add new column
+students["Passed"]=students["Score"] >= 50
+print(students)
+
+# Adjust scores
+students["Adjusted"]=students["Score"] *1.05
 print(students)

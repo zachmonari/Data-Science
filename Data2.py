@@ -36,3 +36,5 @@ students["Category"] = pd.cut(
 )
 print(students)
 print(students.describe())
+print(students.max())
+print(students.min())

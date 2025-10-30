@@ -28,3 +28,11 @@ print(students)
 # Adjust scores
 students["Adjusted"]=students["Score"] *1.05
 print(students)
+
+students["Category"] = pd.cut(
+    students["Score"],
+    bins=[0, 39,49,59, 69, 100],
+    labels=["Fail","D", "C","B", "A"]
+)
+print(students)
+print(students.describe())

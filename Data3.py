@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
 #load the data
 df=pd.read_csv('student-data.csv')
 
@@ -51,4 +52,14 @@ df['age'].hist(bins=8, color='lightgreen', edgecolor='black')
 plt.title("Age Distribution of Students")
 plt.xlabel("Age")
 plt.ylabel("Frequency")
+plt.show()
+
+# Show numeric columns
+print("Numeric columns:\n", df.select_dtypes(include='number').columns.tolist())
+
+# Correlation matrix
+corr = df.corr(numeric_only=True)
+plt.figure(figsize=(10,8))
+sns.heatmap(corr, annot=True, cmap="coolwarm", fmt=".2f")
+plt.title("Correlation Matrix of Numerical Features")
 plt.show()

@@ -63,3 +63,18 @@ plt.figure(figsize=(10,8))
 sns.heatmap(corr, annot=True, cmap="coolwarm", fmt=".2f")
 plt.title("Correlation Matrix of Numerical Features")
 plt.show()
+
+# Compare study time and failures with performance (pass/fail)
+plt.figure(figsize=(6,4))
+sns.boxplot(x='passed', hue="passed",y='studytime', data=df, palette='Set2',legend=False)
+plt.title("Study Time vs Pass Status")
+plt.show()
+
+plt.figure(figsize=(6,4))
+sns.boxplot(x='passed',hue="passed", y='failures', data=df, palette='Set3',legend=False)
+plt.title("Failures vs Pass Status")
+plt.show()
+
+# Average numeric features grouped by performance
+avg_perf = df.groupby('passed').mean(numeric_only=True)
+print("\nAverage of numerical features grouped by performance:\n", avg_perf)

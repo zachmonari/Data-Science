@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
 
-"""
+
 #line plot
 x=[1,2,3,4,5]
 y=[2,4,6,8,10]
@@ -14,13 +14,13 @@ plt.xlabel('Days')
 plt.ylabel('Sales')
 plt.grid(alpha=0.3)
 plt.show()
-"""
+
 #bar chart
 df=pd.DataFrame({
     'Name':["Zac","Kev","Dan","Ian","Jack"],
     "Score":[96,80,75,85,90]
 })
-"""
+
 print(df.describe())
 print(df["Score"])
 print(df.info())
@@ -41,8 +41,13 @@ plt.figure(figsize=(6,4))
 sns.barplot(x="Name",y="Score",data=df,color="r")
 plt.title("Student Scores")
 plt.show()
-"""
+
 #histogram
 sns.histplot(df["Score"],bins=10,kde=True)
 plt.title("Student Scores")
+plt.show()
+
+#boxplot
+sns.boxplot(data=df,x="Name",y="Score")
+plt.title("Student Scores Distribution")
 plt.show()

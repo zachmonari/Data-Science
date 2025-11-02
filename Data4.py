@@ -36,8 +36,13 @@ df["Category"]=pd.cut(
     labels=["D","C","B","A"]
 )
 print(df)
-"""
+
 plt.figure(figsize=(6,4))
 sns.barplot(x="Name",y="Score",data=df,color="r")
+plt.title("Student Scores")
+plt.show()
+"""
+#histogram
+sns.histplot(df["Score"],bins=10,kde=True)
 plt.title("Student Scores")
 plt.show()

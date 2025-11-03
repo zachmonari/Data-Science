@@ -56,6 +56,14 @@ marks=pd.DataFrame({
     "Hours":[2,3,4,5,6,7,8],
     "Score": [55, 58, 63, 70, 72, 80, 85]
 })
+"""
+# scatter plot
+sns.scatterplot(data=marks,x="Hours",y="Score")
 sns.scatterplot(data=marks,x="Hours",y="Score")
 plt.title("Hours studied vs Student Scores")
+plt.show()
+"""
+#regression fit
+sns.regplot(data=marks,x="Hours",y="Score")
+plt.title("Trend: Hours Studied vs Score")
 plt.show()

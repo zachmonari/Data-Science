@@ -3,7 +3,7 @@ import seaborn as sns
 import pandas as pd
 
 
-#line plot
+"""#line plot
 x=[1,2,3,4,5]
 y=[2,4,6,8,10]
 
@@ -50,4 +50,12 @@ plt.show()
 #boxplot
 sns.boxplot(data=df,x="Name",y="Score")
 plt.title("Student Scores Distribution")
+plt.show()
+"""
+marks=pd.DataFrame({
+    "Hours":[2,3,4,5,6,7,8],
+    "Score": [55, 58, 63, 70, 72, 80, 85]
+})
+sns.scatterplot(data=marks,x="Hours",y="Score")
+plt.title("Hours studied vs Student Scores")
 plt.show()

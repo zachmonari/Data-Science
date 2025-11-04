@@ -11,3 +11,7 @@ messy = pd.DataFrame({
 #Remove exact duplicates
 messy=messy.drop_duplicates()
 print(messy)
+print()
+#Standardize text case for names
+messy["name"]=messy["name"].str.title()
+messy["name"].head()

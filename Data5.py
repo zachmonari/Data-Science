@@ -25,8 +25,17 @@ s = messy["salary"].astype(str).str.replace(r"[$,]", "", regex=True)
 messy["salary"] = pd.to_numeric(s, errors="coerce")
 messy.loc[messy["salary"] < 0, "salary"] = np.nan
 print(messy[["salary"]])
-
+print()
 #Fill missing ages with the median
 if not messy["age"].isna().all():
     messy["age"] = messy["age"].fillna(messy["age"].median())
 print(messy["age"])
+
+#Parse dates safely
+messy["date_joined"] = pd.to_datetime(
+    messy["date_joined"], errors="coerce"
+)
+print()
+print(messy["date_joined"])
+messy.info()
+print(messy.head())

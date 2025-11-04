@@ -15,3 +15,7 @@ print()
 #Standardize text case for names
 messy["name"]=messy["name"].str.title()
 messy["name"].head()
+
+#Fix clearly impossible ages
+messy.loc[messy["age"]>120,"age"]=np.nan
+print(messy["age"])

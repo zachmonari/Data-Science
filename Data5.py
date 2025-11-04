@@ -8,3 +8,6 @@ messy = pd.DataFrame({
     "salary": [50000, -10000, 75000, 60000, "$50,000"],
     "date_joined": ["01/15/2020","2021-03-22","March 5, 2019","12-25-2020","01/15/2020"]
 })
+#Remove exact duplicates
+messy=messy.drop_duplicates()
+print(messy)

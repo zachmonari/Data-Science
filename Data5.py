@@ -25,3 +25,8 @@ s = messy["salary"].astype(str).str.replace(r"[$,]", "", regex=True)
 messy["salary"] = pd.to_numeric(s, errors="coerce")
 messy.loc[messy["salary"] < 0, "salary"] = np.nan
 print(messy[["salary"]])
+
+#Fill missing ages with the median
+if not messy["age"].isna().all():
+    messy["age"] = messy["age"].fillna(messy["age"].median())
+print(messy["age"])

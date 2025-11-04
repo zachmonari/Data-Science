@@ -19,3 +19,9 @@ messy["name"].head()
 #Fix clearly impossible ages
 messy.loc[messy["age"]>120,"age"]=np.nan
 print(messy["age"])
+
+#Make salary numeric and drop negatives
+s = messy["salary"].astype(str).str.replace(r"[$,]", "", regex=True)
+messy["salary"] = pd.to_numeric(s, errors="coerce")
+messy.loc[messy["salary"] < 0, "salary"] = np.nan
+print(messy[["salary"]])

@@ -33,3 +33,8 @@ y=student_data['passed']
 x_train, x_test, y_train, y_test = train_test_split(x,y,test_size=0.3,random_state=42)
 print(x_train.shape)
 print("Train size:", x_train.shape[0], " Test size:", x_test.shape[0])
+
+#Train a Random Forest
+model=RandomForestClassifier(n_estimators=100,random_state=42)
+model.fit(x_train,y_train)
+print("Model trained!")

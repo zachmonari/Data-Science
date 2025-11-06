@@ -1,5 +1,4 @@
 import pandas as pd
-import numpy as np
 
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
@@ -50,3 +49,10 @@ print(classification_report(y_test, y_pred, zero_division=0))
 
 print("\nConfusion matrix [rows=true, cols=predicted]:")
 print(confusion_matrix(y_test, y_pred))
+
+# Feature importance
+importance_df = (
+    pd.DataFrame({'feature': features, 'importance': model.feature_importances_})
+      .sort_values('importance', ascending=False)
+)
+print(importance_df)

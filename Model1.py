@@ -22,3 +22,14 @@ student_data['engagement_score']=(
     student_data['assignments_completed']*0.6
 )
 print(student_data[['attendance_rate','assignments_completed','engagement_score']])
+
+#Split into train/test
+features = ['hours_studied_per_week','previous_gpa','attendance_rate',
+            'assignments_completed','engagement_score']
+
+x=student_data[features]
+y=student_data['passed']
+
+x_train, x_test, y_train, y_test = train_test_split(x,y,test_size=0.3,random_state=42)
+print(x_train.shape)
+print("Train size:", x_train.shape[0], " Test size:", x_test.shape[0])

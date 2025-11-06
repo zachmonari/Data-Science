@@ -38,3 +38,15 @@ print("Train size:", x_train.shape[0], " Test size:", x_test.shape[0])
 model=RandomForestClassifier(n_estimators=100,random_state=42)
 model.fit(x_train,y_train)
 print("Model trained!")
+
+#Predict & evaluate
+y_pred = model.predict(x_test)
+
+accuracy = accuracy_score(y_test,y_pred)
+print("Model Prediction Accuracy: ",accuracy)
+
+print("\nClassification report:")
+print(classification_report(y_test, y_pred, zero_division=0))
+
+print("\nConfusion matrix [rows=true, cols=predicted]:")
+print(confusion_matrix(y_test, y_pred))

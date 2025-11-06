@@ -1,5 +1,6 @@
 import pandas as pd
-
+import matplotlib.pyplot as plt
+import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
@@ -64,3 +65,25 @@ proba = model.predict_proba(new_student)[0][1]
 
 print("Prediction:", "Pass" if label==1 else "Fail")
 print("Probability of passing:", round(proba, 2))
+
+# --- 1. Feature Importance Visualization ---
+plt.figure(figsize=(8,5))
+sns.barplot(x='importance', y='feature', data=importance_df, palette='viridis')
+plt.title('Feature Importance in Predicting Student Success')
+plt.xlabel('Importance')
+plt.ylabel('Feature')
+plt.tight_layout()
+plt.show()
+
+# --- 2. Confusion Matrix Visualization ---
+cm = confusion_matrix(y_test, y_pred)
+
+plt.figure(figsize=(5,4))
+sns.heatmap(cm, annot=True, fmt='d', cmap='Blues',
+            xticklabels=['Predicted Fail', 'Predicted Pass'],
+            yticklabels=['Actual Fail', 'Actual Pass'])
+plt.title('Confusion Matrix')
+plt.ylabel('True Label')
+plt.xlabel('Predicted Label')
+plt.tight_layout()
+plt.show()

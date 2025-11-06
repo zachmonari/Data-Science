@@ -56,3 +56,11 @@ importance_df = (
       .sort_values('importance', ascending=False)
 )
 print(importance_df)
+
+#Predict a new student
+new_student = [[12, 3.1, 0.88, 0.82, 0.4*0.88 + 0.6*0.82]]
+label = model.predict(new_student)[0]
+proba = model.predict_proba(new_student)[0][1]
+
+print("Prediction:", "Pass" if label==1 else "Fail")
+print("Probability of passing:", round(proba, 2))

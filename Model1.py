@@ -15,3 +15,10 @@ student_data = pd.DataFrame({
 })
 print(student_data.head())
 print(student_data.describe())
+
+#Feature engineering
+student_data['engagement_score']=(
+    student_data['attendance_rate']*0.4+
+    student_data['assignments_completed']*0.6
+)
+print(student_data[['attendance_rate','assignments_completed','engagement_score']])

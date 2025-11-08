@@ -15,3 +15,12 @@ print("Rows, Cols:", df.shape)
 # Quick sanity checks
 print("Label counts:\n", df["Potability"].value_counts(dropna=False))
 print("\nMissing values per column:\n", df.isna().sum())
+
+# Split features/labels and test set
+X = df.drop(columns=["Potability"])
+y = df["Potability"]
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, stratify=y, random_state=0
+)
+print("Train shape:", X_train.shape, "| Test shape:", X_test.shape)

@@ -42,7 +42,7 @@ cm = confusion_matrix(y_test, y_pred)
 print("UNIT7_ACC", round(acc, 3))
 print("UNIT7_CONFUSION", cm.tolist())
 
-# Tune threshold
+# Tune threshold (Optional)
 y_prob = pipe.predict_proba(X_test)[:, 1]
 threshold = 0.6
 y_pred_tuned = (y_prob >= threshold).astype(int)

@@ -8,3 +8,6 @@ from sklearn.pipeline import make_pipeline
 from sklearn.metrics import accuracy_score, confusion_matrix
 
 #The dataset
+url = "https://raw.githubusercontent.com/rene-gith/water-potability/main/water_potability.csv"
+df = pd.read_csv(url)
+print("Rows, Cols:", df.shape)

@@ -31,3 +31,13 @@ pipe = make_pipeline(
     StandardScaler(),
     LogisticRegression(max_iter=1000, random_state=0)
 )
+# Fit on Train only
+pipe.fit(X_train, y_train)
+
+# Predict on TEST + metrics
+y_pred = pipe.predict(X_test)
+acc = accuracy_score(y_test, y_pred)
+cm = confusion_matrix(y_test, y_pred)
+
+print("UNIT7_ACC", round(acc, 3))
+print("UNIT7_CONFUSION", cm.tolist())

@@ -24,3 +24,10 @@ X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, stratify=y, random_state=0
 )
 print("Train shape:", X_train.shape, "| Test shape:", X_test.shape)
+
+# Build pipeline: impute → scale → model
+pipe = make_pipeline(
+   SimpleImputer(strategy="median"),
+    StandardScaler(),
+    LogisticRegression(max_iter=1000, random_state=0)
+)

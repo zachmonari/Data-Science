@@ -112,3 +112,11 @@ plt.title("Passing Rate by Number of Failures")
 plt.xlabel("Number of Past Failures")
 plt.ylabel("Passing Rate")
 plt.show()
+
+# Travel Time and Performance
+plt.figure(figsize=(6,4))
+sns.barplot(x='traveltime', y=df['passed'].map({'yes':1, 'no':0}), data=df, palette='Purples')
+plt.title("Passing Rate by Travel Time to School")
+plt.xlabel("Travel Time (1=short, 4=very long)")
+plt.ylabel("Passing Rate")
+plt.show()

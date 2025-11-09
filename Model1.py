@@ -115,8 +115,14 @@ plt.show()
 
 # Travel Time and Performance
 plt.figure(figsize=(6,4))
-sns.barplot(x='traveltime', y=df['passed'].map({'yes':1, 'no':0}), data=df, palette='Purples')
+sns.barplot(x='traveltime', y=student_data['passed'].map({'yes':1, 'no':0}), data=student_data, palette='Purples')
 plt.title("Passing Rate by Travel Time to School")
 plt.xlabel("Travel Time (1=short, 4=very long)")
 plt.ylabel("Passing Rate")
+plt.show()
+
+# Absences vs Performance ---
+plt.figure(figsize=(6,4))
+sns.boxplot(x='passed', y='absences', hue='passed', data=student_data, palette='Set2', legend=False)
+plt.title("Absences vs Pass Status")
 plt.show()

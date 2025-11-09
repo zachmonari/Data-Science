@@ -1,11 +1,15 @@
 #important libraries
 import pandas as pd
+import numpy as np
 from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import make_pipeline
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report, roc_auc_score
+# Consider using ROC curve to find optimal threshold
+from sklearn.metrics import roc_curve
+
 
 #The dataset
 url = "https://raw.githubusercontent.com/rene-gith/water-potability/main/water_potability.csv"
@@ -42,7 +46,11 @@ cm = confusion_matrix(y_test, y_pred)
 print("Classification Report:")
 print(classification_report(y_test, y_pred))
 
-print(f"ROC AUC: {roc_auc_score(y_test, y_pred):.3f}")
+# Evaluation
+fpr, tpr, thresholds = roc_curve(y_test, y_prob)
+optimal_idx = np.argmax(tpr - fpr)  # Youden's J statistic
+optimal_threshold = thresholds[optimal_idx]
+print(f"ROC AUC: {roc_auc_score(y_test, y_prob):.3f}")
 
 # Cross-validation score
 cv_scores = cross_val_score(pipe, X_train, y_train, cv=5)

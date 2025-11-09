@@ -88,3 +88,11 @@ plt.ylabel('True Label')
 plt.xlabel('Predicted Label')
 plt.tight_layout()
 plt.show()
+
+# Study Time Distribution ---
+plt.figure(figsize=(6,4))
+sns.countplot(x='studytime', data=student_data, palette='Blues')
+plt.title("Study Time Distribution")
+plt.xlabel("Weekly Study Time (1=low, 4=high)")
+plt.ylabel("Number of Students")
+plt.show()

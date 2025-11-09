@@ -104,3 +104,11 @@ plt.title("Passing Rate by Study Time")
 plt.xlabel("Study Time Level")
 plt.ylabel("Passing Rate")
 plt.show()
+
+#Failures vs Passing ---
+plt.figure(figsize=(6,4))
+sns.barplot(x='failures', y=student_data['passed'].map({'yes':1, 'no':0}), data=student_data, palette='Reds')
+plt.title("Passing Rate by Number of Failures")
+plt.xlabel("Number of Past Failures")
+plt.ylabel("Passing Rate")
+plt.show()

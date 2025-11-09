@@ -1,11 +1,11 @@
 #important libraries
 import pandas as pd
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split, cross_val_score
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import make_pipeline
-from sklearn.metrics import accuracy_score, confusion_matrix
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report, roc_auc_score
 
 #The dataset
 url = "https://raw.githubusercontent.com/rene-gith/water-potability/main/water_potability.csv"
@@ -38,6 +38,15 @@ pipe.fit(X_train, y_train)
 y_pred = pipe.predict(X_test)
 acc = accuracy_score(y_test, y_pred)
 cm = confusion_matrix(y_test, y_pred)
+# Add these to your evaluation section
+print("Classification Report:")
+print(classification_report(y_test, y_pred))
+
+print(f"ROC AUC: {roc_auc_score(y_test, y_pred):.3f}")
+
+# Cross-validation score
+cv_scores = cross_val_score(pipe, X_train, y_train, cv=5)
+print(f"CV Accuracy: {cv_scores.mean():.3f} (+/- {cv_scores.std() * 2:.3f})")
 
 print("UNIT7_ACC", round(acc, 3))
 print("UNIT7_CONFUSION", cm.tolist())

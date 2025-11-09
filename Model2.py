@@ -46,12 +46,6 @@ cm = confusion_matrix(y_test, y_pred)
 print("Classification Report:")
 print(classification_report(y_test, y_pred))
 
-# Evaluation
-fpr, tpr, thresholds = roc_curve(y_test, y_prob)
-optimal_idx = np.argmax(tpr - fpr)  # Youden's J statistic
-optimal_threshold = thresholds[optimal_idx]
-print(f"ROC AUC: {roc_auc_score(y_test, y_prob):.3f}")
-
 # Cross-validation score
 cv_scores = cross_val_score(pipe, X_train, y_train, cv=5)
 print(f"CV Accuracy: {cv_scores.mean():.3f} (+/- {cv_scores.std() * 2:.3f})")
@@ -63,3 +57,8 @@ print("UNIT7_CONFUSION", cm.tolist())
 y_prob = pipe.predict_proba(X_test)[:, 1]
 threshold = 0.6
 y_pred_tuned = (y_prob >= threshold).astype(int)
+# Evaluation
+fpr, tpr, thresholds = roc_curve(y_test, y_prob)
+optimal_idx = np.argmax(tpr - fpr)  # Youden's J statistic
+optimal_threshold = thresholds[optimal_idx]
+print(f"ROC AUC: {roc_auc_score(y_test, y_prob):.3f}")

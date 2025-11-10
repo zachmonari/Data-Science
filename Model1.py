@@ -91,7 +91,7 @@ plt.show()
 
 # Study Time Distribution ---
 plt.figure(figsize=(6,4))
-sns.countplot(x='studytime', data=student_data, palette='Blues')
+sns.countplot(x=student_data['hours_studied_per_week'], data=student_data, palette='Blues')
 plt.title("Study Time Distribution")
 plt.xlabel("Weekly Study Time (1=low, 4=high)")
 plt.ylabel("Number of Students")
@@ -99,7 +99,7 @@ plt.show()
 
 # Relationship Between Study Time and Passing
 plt.figure(figsize=(6,4))
-sns.barplot(x='studytime', y=student_data['passed'].map({'yes':1, 'no':0}), data=student_data, palette='Greens')
+sns.barplot(x=student_data['hours_studied_per_week'], y=student_data['passed'].map({'yes':1, 'no':0}), data=student_data, palette='Greens')
 plt.title("Passing Rate by Study Time")
 plt.xlabel("Study Time Level")
 plt.ylabel("Passing Rate")

@@ -33,3 +33,18 @@ plt.figure(figsize=(6,4))
 sns.heatmap(corr_matrix, annot=True, cmap='coolwarm', fmt='.2f')
 plt.title('Correlation Matrix')
 plt.show()
+
+# Dataset 3
+
+data = {
+    'Name': ['Zac', 'Kev', 'Dan', 'Ian', 'Jack', 'Lyn', 'Ann', 'Sam', 'Kim', 'Joy'],
+    'Gender': ['Male', 'Male', 'Male', 'Male', 'Male', 'Female', 'Female', 'Male', 'Female', 'Female'],
+    'StudyTime': [4, 2, 3, 4, 1, 3, 4, 2, 1, 3],
+    'Absences': [3, 10, 4, 1, 8, 2, 0, 6, 12, 2],
+    'Failures': [0, 2, 1, 0, 3, 0, 0, 1, 2, 0],
+    'Grade': [90, 60, 75, 95, 50, 88, 92, 70, 55, 85]
+}
+
+df = pd.DataFrame(data)
+
+print(df)

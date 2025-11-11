@@ -36,7 +36,7 @@ plt.show()
 
 # Dataset 3
 
-data = {
+data1 = {
     'Name': ['Zac', 'Kev', 'Dan', 'Ian', 'Jack', 'Lyn', 'Ann', 'Sam', 'Kim', 'Joy'],
     'Gender': ['Male', 'Male', 'Male', 'Male', 'Male', 'Female', 'Female', 'Male', 'Female', 'Female'],
     'StudyTime': [4, 2, 3, 4, 1, 3, 4, 2, 1, 3],
@@ -45,6 +45,16 @@ data = {
     'Grade': [90, 60, 75, 95, 50, 88, 92, 70, 55, 85]
 }
 
-df = pd.DataFrame(data)
+df = pd.DataFrame(data1)
+df["Added"]=df["Grade"]*1.05
+df["Passed"]=df["Grade"]>=70
+# Sort by grade
+sorted_grades=df.sort_values(by="Grade",ascending=False)
+print(sorted_grades)
 
+df["Category"] = pd.cut(
+    df["Grade"],
+    bins=[0, 39,49,59, 69, 100],
+    labels=["Fail","D", "C","B", "A"]
+)
 print(df)

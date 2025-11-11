@@ -115,3 +115,18 @@ plt.figure(figsize = (6,6))
 sns.heatmap(corr, annot=True, cmap='coolwarm', fmt='.2f')
 plt.title("Correlation Matrix 2")
 plt.show()
+
+# correlation matrix 3
+features=df[['StudyTime','Grade',"Absences","Failures"]]
+corr=features.corr()
+plt.figure(figsize = (6,6))
+sns.heatmap(corr, annot=True, cmap='coolwarm', fmt='.2f')
+plt.title("Correlation Matrix 3")
+plt.show()
+
+# bar plot
+plt.figure(figsize=(6,4))
+sns.barplot(x="Name",y="Grade",data=df,color="green")
+plt.title("Student Grades")
+plt.xticks(rotation=45)
+plt.show()

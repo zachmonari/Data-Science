@@ -67,3 +67,18 @@ plt.xlabel('StudyTime')
 plt.ylabel('Grades')
 plt.grid(alpha=0.3)
 plt.show()
+
+#pie chart of passed vs failed students
+Pass_counts=df["Passed"].value_counts()
+plt.figure(figsize=(5,5))
+plt.pie(
+    Pass_counts,
+    labels=Pass_counts.index,
+    autopct='%1.1f%%',
+    colors=['green', 'red'],
+    startangle=90,
+    wedgeprops={'edgecolor': 'black'},
+    explode=[0.01,0.01]
+)
+plt.title('Passlist distribution')
+plt.show()

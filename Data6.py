@@ -58,3 +58,12 @@ df["Category"] = pd.cut(
     labels=["Fail","D", "C","B", "A"]
 )
 print(df)
+
+# Scatter plot
+plt.figure(figsize=(6,4))
+plt.scatter(df["StudyTime"],df['Grade'],marker='o')
+plt.title('Student data')
+plt.xlabel('StudyTime')
+plt.ylabel('Grades')
+plt.grid(alpha=0.3)
+plt.show()

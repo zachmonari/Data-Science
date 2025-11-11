@@ -82,3 +82,22 @@ plt.pie(
 )
 plt.title('Passlist distribution')
 plt.show()
+
+
+# Plot pass list distribution
+plt.figure(figsize = (5,5))
+Pass_counts.plot(kind='bar',color=["green","red"])
+plt.title("Pass list Distribution")
+plt.xlabel("Pass vs Fail")
+plt.ylabel("Number of students")
+plt.xticks(rotation=0)
+plt.show()
+
+# Grades distribution
+print("\nGrades statistics:\n", df['Grade'].describe())
+plt.figure(figsize = (6,4))
+df['Grade'].hist(bins=8, color='lightgreen', edgecolor='black')
+plt.title("Grades Distribution of Students")
+plt.xlabel("Grades")
+plt.ylabel("Frequency")
+plt.show()

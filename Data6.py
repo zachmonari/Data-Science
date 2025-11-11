@@ -101,3 +101,17 @@ plt.title("Grades Distribution of Students")
 plt.xlabel("Grades")
 plt.ylabel("Frequency")
 plt.show()
+
+# correlation matrix
+corr=df.corr(numeric_only=True)
+plt.figure(figsize = (6,6))
+sns.heatmap(corr, annot=True, cmap='coolwarm', fmt='.2f')
+plt.title("Correlation Matrix")
+plt.show()
+
+# correlation matrix 2
+corr=df[['StudyTime','Grade',"Absences","Failures"]].corr()
+plt.figure(figsize = (6,6))
+sns.heatmap(corr, annot=True, cmap='coolwarm', fmt='.2f')
+plt.title("Correlation Matrix 2")
+plt.show()

@@ -94,6 +94,8 @@ plt.pie(
     wedgeprops={'edgecolor': 'black'},
     explode=[0.01,0.01]
 )
+plt.title('Study Hours distribution')
+plt.show()
 
 # Plot pass list distribution
 plt.figure(figsize = (5,5))

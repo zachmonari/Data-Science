@@ -85,6 +85,15 @@ plt.show()
 
 #pie chart of how study time is distributed among the students
 Hours=df["StudyTime"].value_counts()
+plt.figure(figsize=(5,5))
+plt.pie(
+    Hours,
+    labels='%1.1f%%',
+    colors=['green', 'yellow'],
+    startangle=90,
+    wedgeprops={'edgecolor': 'black'},
+    explode=[0.01,0.01]
+)
 
 # Plot pass list distribution
 plt.figure(figsize = (5,5))

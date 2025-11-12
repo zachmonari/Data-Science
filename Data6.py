@@ -83,6 +83,8 @@ plt.pie(
 plt.title('Passlist distribution')
 plt.show()
 
+#pie chart of how study time is distributed among the students
+Hours=df["StudyTime"].value_counts()
 
 # Plot pass list distribution
 plt.figure(figsize = (5,5))

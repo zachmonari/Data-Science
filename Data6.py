@@ -98,6 +98,14 @@ plt.pie(
 plt.title('Study Hours distribution')
 plt.show()
 
+# correlation 1
+corr=df[['StudyTime', 'Absences', 'Failures', 'Grade']].corr()
+plt.figure(figsize=(6,6))
+sns.heatmap(corr, annot=True, cmap='coolwarm', fmt='.2f')
+plt.title('Correlation Matrix')
+plt.show()
+
+
 # Plot pass list distribution
 plt.figure(figsize = (5,5))
 Pass_counts.plot(kind='bar',color=["green","red"])

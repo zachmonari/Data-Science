@@ -88,11 +88,12 @@ Hours=df["StudyTime"].value_counts()
 plt.figure(figsize=(5,5))
 plt.pie(
     Hours,
-    labels='%1.1f%%',
-    colors=['green', 'yellow'],
+    labels=Hours.index,
+    autopct='%1.1f%%',
+    colors=['green', 'red','blue','yellow'],
     startangle=90,
     wedgeprops={'edgecolor': 'black'},
-    explode=[0.01,0.01]
+    explode=[0.01,0.01,0.01,0.01]
 )
 plt.title('Study Hours distribution')
 plt.show()

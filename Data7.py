@@ -30,3 +30,8 @@ plt.title("Student Clusters based on Study Habits")
 plt.show()
 
 print(df)
+#Cluster 0 → High study hours & high grades
+
+#Cluster 1 → Average study hours & grades
+
+#Cluster 2 → Low study hours & low grades

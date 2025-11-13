@@ -20,3 +20,11 @@ scaled = scaler.fit_transform(df)
 kmeans = KMeans(n_clusters=3, random_state=42)
 kmeans.fit(scaled)
 df['cluster'] = kmeans.labels_
+
+# Step 3: Visualize clusters
+plt.figure(figsize=(8,6))
+plt.scatter(df['study_hours'], df['grades'], c=df['cluster'], cmap='viridis', s=100)
+plt.xlabel("Study Hours")
+plt.ylabel("Grades")
+plt.title("Student Clusters based on Study Habits")
+plt.show()

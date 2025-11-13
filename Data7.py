@@ -15,3 +15,8 @@ df = pd.DataFrame(data)
 # Step 1: Standardize the data
 scaler = StandardScaler()
 scaled = scaler.fit_transform(df)
+
+# Step 2: Apply KMeans
+kmeans = KMeans(n_clusters=3, random_state=42)
+kmeans.fit(scaled)
+df['cluster'] = kmeans.labels_

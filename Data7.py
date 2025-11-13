@@ -11,3 +11,7 @@ data = {
 }
 
 df = pd.DataFrame(data)
+
+# Step 1: Standardize the data
+scaler = StandardScaler()
+scaled = scaler.fit_transform(df)

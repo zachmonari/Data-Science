@@ -28,3 +28,5 @@ plt.xlabel("Study Hours")
 plt.ylabel("Grades")
 plt.title("Student Clusters based on Study Habits")
 plt.show()
+
+print(df)

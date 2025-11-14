@@ -44,4 +44,6 @@ new_student = pd.DataFrame({
 # --- Step 3: Standardize new data using the same scaler ---
 new_scaled = scaler.transform(new_student)
 
-
+# --- Step 4: Predict cluster ---
+predicted_cluster = kmeans.predict(new_scaled)
+print(f"🎯 The new student belongs to cluster: {predicted_cluster[0]}")

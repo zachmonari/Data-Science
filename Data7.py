@@ -52,3 +52,9 @@ print(f"🎯 The new student belongs to cluster: {predicted_cluster[0]}")
 # Test different K values
 inertia_values = []
 K_range = range(1, 10)
+
+for k in K_range:
+    kmeans = KMeans(n_clusters=k, random_state=42)
+    kmeans.fit(scaled)
+    inertia_values.append(kmeans.inertia_)  # Sum of squared distances within clusters
+

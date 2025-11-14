@@ -41,4 +41,7 @@ new_student = pd.DataFrame({
     'study_hours': [7],
     'grades': [72]
 })
+# --- Step 3: Standardize new data using the same scaler ---
+new_scaled = scaler.transform(new_student)
+
 

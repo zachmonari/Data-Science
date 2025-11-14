@@ -47,3 +47,8 @@ new_scaled = scaler.transform(new_student)
 # --- Step 4: Predict cluster ---
 predicted_cluster = kmeans.predict(new_scaled)
 print(f"🎯 The new student belongs to cluster: {predicted_cluster[0]}")
+
+# elbow method
+# Test different K values
+inertia_values = []
+K_range = range(1, 10)

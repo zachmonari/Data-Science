@@ -36,3 +36,9 @@ print(df)
 #Cluster 1 → Average study hours & grades
 
 #Cluster 2 → Low study hours & low grades
+# --- Step 2: New student data ---
+new_student = pd.DataFrame({
+    'study_hours': [7],
+    'grades': [72]
+})
+

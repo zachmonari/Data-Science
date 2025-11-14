@@ -58,3 +58,11 @@ for k in K_range:
     kmeans.fit(scaled)
     inertia_values.append(kmeans.inertia_)  # Sum of squared distances within clusters
 
+# Plot the Elbow Curve
+plt.figure(figsize=(8,5))
+plt.plot(K_range, inertia_values, marker='o')
+plt.title("Elbow Method for Optimal K")
+plt.xlabel("Number of Clusters (K)")
+plt.ylabel("Inertia (Within-Cluster Sum of Squares)")
+plt.grid(True)
+plt.show()

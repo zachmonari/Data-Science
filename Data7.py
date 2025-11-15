@@ -78,3 +78,12 @@ plt.scatter(
     cmap='viridis',
     s=80
 )
+# Cluster centers
+plt.scatter(
+    kmeans.cluster_centers_[:, 0],
+    kmeans.cluster_centers_[:, 1],
+    s=300,
+    c='red',
+    marker='X',
+    label='Cluster Centers'
+)

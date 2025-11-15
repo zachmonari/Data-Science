@@ -96,3 +96,10 @@ plt.scatter(
     marker='*',
     label='New Student'
 )
+
+plt.title("K-Means Clustering with New Student")
+plt.xlabel("Study Hours (scaled)")
+plt.ylabel("Grade (scaled)")
+plt.legend()
+plt.grid(True)
+plt.show()

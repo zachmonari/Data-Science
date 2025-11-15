@@ -72,8 +72,8 @@ plt.show()
 plt.figure(figsize=(8, 6))
 # Existing students
 plt.scatter(
-    scaled_data[:, 0],
-    scaled_data[:, 1],
+    scaled[:, 0],
+    scaled[:, 1],
     c=kmeans.labels_,
     cmap='viridis',
     s=80

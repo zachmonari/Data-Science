@@ -66,3 +66,7 @@ plt.xlabel("Number of Clusters (K)")
 plt.ylabel("Inertia (Within-Cluster Sum of Squares)")
 plt.grid(True)
 plt.show()
+# ---------------------------
+# 5. Visualization
+# ---------------------------
+plt.figure(figsize=(8, 6))

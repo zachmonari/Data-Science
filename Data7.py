@@ -87,3 +87,12 @@ plt.scatter(
     marker='X',
     label='Cluster Centers'
 )
+# New student point
+plt.scatter(
+    new_scaled[:, 0],
+    new_scaled[:, 1],
+    c='black',
+    s=200,
+    marker='*',
+    label='New Student'
+)

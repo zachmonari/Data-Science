@@ -22,3 +22,8 @@ scaled_data = scaler.fit_transform(df)
 # ---------------------------
 kmeans = KMeans(n_clusters=3, random_state=42)
 kmeans.fit(scaled_data)
+# ---------------------------
+# 4. New student data
+# ---------------------------
+new_student = [[7, 72, 3]]  # study_hours, grade, absences
+new_scaled = scaler.transform(new_student)

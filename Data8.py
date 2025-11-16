@@ -12,3 +12,8 @@ df = pd.DataFrame({
     "grade": [50, 55, 65, 80, 85, 45, 70, 78, 60, 90],
     "absences": [10, 8, 5, 3, 2, 12, 6, 4, 7, 1]
 })
+# ---------------------------
+# 2. Scaling
+# ---------------------------
+scaler = StandardScaler()
+scaled_data = scaler.fit_transform(df)

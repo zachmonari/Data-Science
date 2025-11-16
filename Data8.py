@@ -27,3 +27,6 @@ kmeans.fit(scaled_data)
 # ---------------------------
 new_student = [[7, 72, 3]]  # study_hours, grade, absences
 new_scaled = scaler.transform(new_student)
+
+new_cluster = kmeans.predict(new_scaled)[0]
+print("New student belongs to cluster:", new_cluster)

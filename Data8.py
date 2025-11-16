@@ -53,3 +53,9 @@ ax.scatter(
     new_scaled[:, 0], new_scaled[:, 1], new_scaled[:, 2],
     c='black', s=200, marker='*', label='New Student'
 )
+ax.set_title("3D K-Means Clustering Visualization")
+ax.set_xlabel("Study Hours (scaled)")
+ax.set_ylabel("Grade (scaled)")
+ax.set_zlabel("Absences (scaled)")
+ax.legend()
+plt.show()

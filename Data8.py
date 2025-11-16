@@ -41,3 +41,10 @@ ax.scatter(
     scaled_data[:, 0], scaled_data[:, 1], scaled_data[:, 2],
     c=kmeans.labels_, cmap="viridis", s=80
 )
+# Cluster centers
+ax.scatter(
+    kmeans.cluster_centers_[:, 0],
+    kmeans.cluster_centers_[:, 1],
+    kmeans.cluster_centers_[:, 2],
+    c='red', s=300, marker='X', label='Cluster Centers'
+)

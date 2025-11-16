@@ -48,3 +48,8 @@ ax.scatter(
     kmeans.cluster_centers_[:, 2],
     c='red', s=300, marker='X', label='Cluster Centers'
 )
+# New student
+ax.scatter(
+    new_scaled[:, 0], new_scaled[:, 1], new_scaled[:, 2],
+    c='black', s=200, marker='*', label='New Student'
+)

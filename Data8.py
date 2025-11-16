@@ -17,3 +17,8 @@ df = pd.DataFrame({
 # ---------------------------
 scaler = StandardScaler()
 scaled_data = scaler.fit_transform(df)
+# ---------------------------
+# 3. K-Means clustering
+# ---------------------------
+kmeans = KMeans(n_clusters=3, random_state=42)
+kmeans.fit(scaled_data)

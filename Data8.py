@@ -30,3 +30,14 @@ new_scaled = scaler.transform(new_student)
 
 new_cluster = kmeans.predict(new_scaled)[0]
 print("New student belongs to cluster:", new_cluster)
+# ---------------------------
+# 5. 3D Visualization
+# ---------------------------
+fig = plt.figure(figsize=(10, 7))
+ax = fig.add_subplot(111, projection='3d')
+
+# Existing students
+ax.scatter(
+    scaled_data[:, 0], scaled_data[:, 1], scaled_data[:, 2],
+    c=kmeans.labels_, cmap="viridis", s=80
+)

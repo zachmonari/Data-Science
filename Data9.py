@@ -30,4 +30,8 @@ print("Accuracy:", accuracy_score(y_test, y_pred))
 print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
 print("Report:\n", classification_report(y_test, y_pred))
 
+new_student = [[6, 65]]
+prediction = model.predict(new_student)
+
+print("Pass (1) or Fail (0):", prediction)
 

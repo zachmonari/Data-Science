@@ -1,6 +1,7 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 
 data = {
     "study_hours": [2, 3, 1, 5, 8, 7, 4, 9, 6, 10],
@@ -23,5 +24,10 @@ model.fit(X_train, y_train)
 
 y_pred = model.predict(X_test)
 print("Predictions:", y_pred)
+
+
+print("Accuracy:", accuracy_score(y_test, y_pred))
+print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
+print("Report:\n", classification_report(y_test, y_pred))
 
 

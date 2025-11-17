@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
@@ -44,5 +45,32 @@ plt.scatter(df["study_hours"], df["previous_grade"],
 plt.xlabel("Study Hours")
 plt.ylabel("Previous Grade")
 plt.title("Student Performance: Pass vs Fail")
+plt.grid(True)
+plt.show()
+
+# Fit logistic regression using ONE feature
+X_single = df[["study_hours"]]
+y = df["passed"]
+
+model_single = LogisticRegression()
+model_single.fit(X_single, y)
+
+# Create smooth curve values
+study_range = np.linspace(df["study_hours"].min(),
+                          df["study_hours"].max(), 200).reshape(-1, 1)
+
+prob_curve = model_single.predict_proba(study_range)[:, 1]
+
+plt.figure(figsize=(7,5))
+
+# Scatter points
+plt.scatter(df["study_hours"], df["passed"], c=df["passed"], cmap="bwr")
+
+# Logistic curve
+plt.plot(study_range, prob_curve, linewidth=3)
+
+plt.xlabel("Study Hours")
+plt.ylabel("Probability of Passing")
+plt.title("Logistic Regression Curve")
 plt.grid(True)
 plt.show()

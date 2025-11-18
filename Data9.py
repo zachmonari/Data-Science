@@ -85,6 +85,14 @@ plt.title("Student Performance: Pass vs Fail")
 plt.grid(True)
 plt.show()
 
+
+xx, yy = np.meshgrid(
+    np.linspace(x_min, x_max, 200),
+    np.linspace(y_min, y_max, 200)
+)
+
+grid = np.c_[xx.ravel(), yy.ravel()]
+probs = model.predict_proba(grid)[:, 1].reshape(xx.shape)
 plt.figure(figsize=(8,6))
 
 plt.contourf(xx, yy, probs, cmap="viridis", levels=20)

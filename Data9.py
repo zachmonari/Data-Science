@@ -93,6 +93,9 @@ plt.colorbar(label="Probability of Passing")
 plt.scatter(df["study_hours"], df["previous_grade"],
             c=df["passed"], cmap="bwr", edgecolors="black")
 
-
+plt.xlabel("Study Hours")
+plt.ylabel("Previous Grade")
+plt.title("Probability Map (Logistic Regression Surface)")
+plt.show()
 
 

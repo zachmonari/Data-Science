@@ -90,6 +90,9 @@ plt.figure(figsize=(8,6))
 plt.contourf(xx, yy, probs, cmap="viridis", levels=20)
 plt.colorbar(label="Probability of Passing")
 
+plt.scatter(df["study_hours"], df["previous_grade"],
+            c=df["passed"], cmap="bwr", edgecolors="black")
+
 
 
 

@@ -74,3 +74,10 @@ plt.ylabel("Probability of Passing")
 plt.title("Logistic Regression Curve")
 plt.grid(True)
 plt.show()
+
+plt.figure(figsize=(7,5))
+plt.scatter(df["study_hours"], df["previous_grade"],
+            c=df["passed"], cmap="bwr", s=100)
+
+
+

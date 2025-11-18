@@ -85,7 +85,9 @@ plt.title("Student Performance: Pass vs Fail")
 plt.grid(True)
 plt.show()
 
-
+# Create a mesh grid for probability surface
+x_min, x_max = X["study_hours"].min() - 1, X["study_hours"].max() + 1
+y_min, y_max = X["previous_grade"].min() - 5, X["previous_grade"].max() + 5
 xx, yy = np.meshgrid(
     np.linspace(x_min, x_max, 200),
     np.linspace(y_min, y_max, 200)

@@ -79,5 +79,9 @@ plt.figure(figsize=(7,5))
 plt.scatter(df["study_hours"], df["previous_grade"],
             c=df["passed"], cmap="bwr", s=100)
 
-
+plt.xlabel("Study Hours")
+plt.ylabel("Previous Grade")
+plt.title("Student Performance: Pass vs Fail")
+plt.grid(True)
+plt.show()
 

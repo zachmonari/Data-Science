@@ -85,3 +85,11 @@ plt.title("Student Performance: Pass vs Fail")
 plt.grid(True)
 plt.show()
 
+plt.figure(figsize=(8,6))
+
+plt.contourf(xx, yy, probs, cmap="viridis", levels=20)
+plt.colorbar(label="Probability of Passing")
+
+
+
+

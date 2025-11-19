@@ -5,6 +5,9 @@ from sklearn.metrics import accuracy_score, classification_report, confusion_mat
 from sklearn import tree as tree_plot
 import matplotlib.pyplot as plt
 import numpy as np
+import warnings
+warnings.filterwarnings("ignore")
+
 
 data = {
     "study_hours": [2, 3, 1, 5, 8, 7, 4, 9, 6, 10],

@@ -1,6 +1,8 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+
 data = {
     "study_hours": [2, 3, 1, 5, 8, 7, 4, 9, 6, 10],
     "previous_grade": [45, 50, 40, 60, 80, 78, 55, 90, 70, 95],
@@ -23,3 +25,7 @@ tree.fit(X_train, y_train)
 y_pred = tree.predict(X_test)
 print("Predictions:", y_pred)
 
+# Evaluate Performance
+print("Accuracy:", accuracy_score(y_test, y_pred))
+print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
+print("Classification Report:\n", classification_report(y_test, y_pred))

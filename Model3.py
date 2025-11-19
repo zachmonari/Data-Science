@@ -29,3 +29,13 @@ print("Predictions:", y_pred)
 print("Accuracy:", accuracy_score(y_test, y_pred))
 print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
 print("Classification Report:\n", classification_report(y_test, y_pred))
+
+# Visualize the Decision Tree
+from sklearn import tree as tree_plot
+import matplotlib.pyplot as plt
+
+plt.figure(figsize=(12, 8))
+tree_plot.plot_tree(tree, feature_names=["study_hours", "previous_grade"],
+                    class_names=["Fail", "Pass"],
+                    filled=True, rounded=True)
+plt.show()

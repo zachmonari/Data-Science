@@ -84,3 +84,12 @@ param_grid = {
     "min_samples_leaf": [1, 2, 4],
     "max_features": [None, "sqrt", "log2"]
 }
+# Set up Grid Search
+grid_search = GridSearchCV(
+    estimator=tree,
+    param_grid=param_grid,
+    cv=5,              # 5-fold cross validation
+    scoring="accuracy",
+    verbose=1,
+    n_jobs=-1          # use all CPU cores
+)

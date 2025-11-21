@@ -93,3 +93,5 @@ grid_search = GridSearchCV(
     verbose=1,
     n_jobs=-1          # use all CPU cores
 )
+# Fit Grid Search
+grid_search.fit(X, y)

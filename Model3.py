@@ -95,3 +95,6 @@ grid_search = GridSearchCV(
 )
 # Fit Grid Search
 grid_search.fit(X, y)
+
+# Best hyperparameters
+print("Best Parameters:", grid_search.best_params_)

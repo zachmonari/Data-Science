@@ -72,3 +72,11 @@ plt.show()
 
 # Hyper-parameter tuning
 from sklearn.model_selection import GridSearchCV
+# Define the hyperparameter grid
+param_grid = {
+    "criterion": ["gini", "entropy"],
+    "max_depth": [None, 2, 3, 4, 5, 10],
+    "min_samples_split": [2, 5, 10],
+    "min_samples_leaf": [1, 2, 4],
+    "max_features": [None, "sqrt", "log2"]
+}

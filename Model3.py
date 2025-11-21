@@ -98,3 +98,6 @@ grid_search.fit(X, y)
 
 # Best hyperparameters
 print("Best Parameters:", grid_search.best_params_)
+
+# Best score
+print("Best Accuracy:", grid_search.best_score_)

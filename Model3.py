@@ -69,3 +69,6 @@ plt.xlabel("Study Hours")
 plt.ylabel("Previous Grade")
 plt.title("Decision Tree Classification Boundary")
 plt.show()
+
+# Hyper-parameter tuning
+from sklearn.model_selection import GridSearchCV

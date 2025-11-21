@@ -72,6 +72,10 @@ plt.show()
 
 # Hyper-parameter tuning
 from sklearn.model_selection import GridSearchCV
+
+# Define the model
+tree = DecisionTreeClassifier(random_state=42)
+
 # Define the hyperparameter grid
 param_grid = {
     "criterion": ["gini", "entropy"],
